@@ -1,0 +1,82 @@
+._btn-check,
+._btn-close {
+    display: flex;
+    width: var(--btn-size);
+    min-width: var(--btn-size);
+    height: var(--btn-size);
+    justify-content: center;
+    align-items: center;
+    line-height: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: transparent;
+    color: var(--cl-txt-main);
+    transition: text-shadow 0.3s;
+    cursor: pointer;
+}
+
+._btn-check {
+    border: 1px solid var(--cl-txt-main);
+}
+
+._btn-check:hover,
+._btn-check:focus
+._btn-close:hover,
+._btn-close:focus {
+    text-shadow: 0 0 3px var(--cl-txt-main);
+}
+
+._btn-modal {
+    display: block;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    line-height: 1.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+._btn-modal._primary {
+    background-color: var(--cl-txt-main);
+    color: var(--cl-bg-main);
+}
+
+._btn-modal._secondary {
+    background-color: transparent;
+    color: var(--cl-txt-main);
+    border: 1px solid var(--cl-txt-main);
+}
+
+._btn-sort {
+    background-color: transparent;
+    color: var(--cl-txt-main);
+    display: block;
+    padding: 2px 8px;
+}
+
+._btn-sort._active {
+    border: 1px solid var(--cl-txt-main);
+}
+
+._btn-pagination {
+    display: block;
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+    line-height: 1.5rem;
+    text-align: center;
+    color: var(--cl-txt-main);
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+._btn-pagination:hover,
+._btn-pagination:focus {
+    text-shadow: 0 0 3px var(--cl-txt-main);
+}
+
+._btn-pagination:disabled {
+    opacity: 0.25;
+}

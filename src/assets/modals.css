@@ -1,0 +1,85 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.modal-shadow {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cl-bg-shadow);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 64px;
+}
+
+.modal-content {
+    position: absolute;
+    z-index: 1001;
+    inset: 0;
+    width: 50%;
+    margin: auto;
+    border: 1px solid var(--cl-txt-main);
+    height: fit-content;
+    padding: 16px;
+    background-color: var(--cl-bg-main);
+
+    @media screen and (max-width: 1328px) {
+        width: 560px;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: calc(100% - 32px);
+    }
+}
+
+.modal-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 16px;
+    margin-bottom: 32px;
+}
+
+._modal-loader-wrap {
+    display: block;
+    margin: 32px auto;
+    height: 24px;
+    width: 100%;
+    background-color: var(--cl-txt-main);
+    padding: 2px;
+}
+
+._modal-loader {
+    display: block;
+    height: 100%;
+    background-color: var(--cl-bg-main);
+    animation: preloader;
+    animation-duration: 750ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes preloader {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

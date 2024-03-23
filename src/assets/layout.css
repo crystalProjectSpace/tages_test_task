@@ -1,0 +1,73 @@
+:root {
+  font-size: 16px;
+  line-height: 20px;
+  font-family: Consolas;
+
+  --footer-height: 200px;
+  --btn-size: 24px;
+}
+ 
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+*, *:hover, *:focus {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--cl-bg-main);
+  color: var(--cl-txt-main);
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.25rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+  line-height: 1.25rem;
+}
+
+h5, h6 {
+  font-size: 1rem;
+  line-height: 1.125rem;
+}
+
+._select {
+  position: relative;
+}
+
+._select-list {
+  position: absolute;
+  z-index: 1010;
+  left: 0;
+  top: calc(100% + 4px);
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 5px 5px var(--cl-bg-shadow);
+}
+
+._select-item {
+  padding: 4px 8px;
+}

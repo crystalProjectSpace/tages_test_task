@@ -1,0 +1,46 @@
+.scheduler-main {
+    position: relative;
+}
+
+.scheduler-options-wrapper {
+    position: absolute;
+    right: 32px;
+    top: 16px;
+    background-color: var(--cl-bg-main);
+}
+
+.scheduler-options-list {
+    background-color: var(--cl-txt-main);
+    border: 1px solid var(--cl-txt-main);
+    left: unset;
+    right: 0;
+    width: unset;
+}
+
+.scheduler-options-list-item {
+    color: var(--cl-bg-main);
+    transition: color 0.3s;
+    width: 200px;
+    cursor: pointer;
+}
+
+.scheduler-options-list-item:hover,
+.scheduler-options-list-item._selected {
+    background-color: var(--cl-bg-main);
+    color: var(--cl-txt-main);
+}
+
+.scheduler-pagination {
+    padding: 0px 32px;
+}
+
+.scheduler-pagination-types {
+    display: flex;
+    align-items: flex-start;
+    row-gap: 16px;
+}
+
+.pagination {
+    display: flex;
+    column-gap: 4px;
+}

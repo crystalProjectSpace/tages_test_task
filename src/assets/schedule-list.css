@@ -1,0 +1,83 @@
+.scheduler-list-wrapper {
+    padding: 16px 32px;
+    margin-bottom: 16px;
+}
+
+.scheduler-list-header {
+    padding-bottom: 32px;
+    background-color: var(--cl-bg-main);
+}
+
+.scheduler-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    height: calc(100vh - var(--footer-height));
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.scheduler-list-item {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    padding: 8px;
+    border: 1px solid var(--cl-border-main);
+    background-color: var(--cl-bg-item);
+    transition: box-shadow 0.3s;
+}
+
+.scheduler-list-item:hover {
+    box-shadow: 0 0 0 5px var(--cl-bg-main), 0 0 15px 3px var(--cl-txt-main);
+}
+
+.scheduler-list-item-contents {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.scheduler-list-item-meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.scheduler-list-item-meta:first-of-type {
+    margin-bottom: 12px;
+}
+
+.scheduler-list-item-title {
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+.scheduler-list-item-date {
+    font-family: Courier;
+    font-size: 0.8rem;
+}  
+
+.scheduler-list-item-description {
+    display: --webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.scheduler-list-item._finished .scheduler-list-item-contents {
+    opacity: 0.25;
+}
+
+.scheduler-list-item._new {
+    padding: 24px 8px;
+    cursor: pointer;
+}
+
+.scheduler-list-item._new ._line {
+    display: block;
+    height: 2px;
+    background-color: var(--cl-txt-main);
+    flex-basis: 0;
+    flex-grow: 1;
+}
