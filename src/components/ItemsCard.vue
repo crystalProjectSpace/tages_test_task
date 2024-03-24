@@ -3,6 +3,9 @@ import { computed } from 'vue'
 import { useStore} from 'vuex'
 import type { WareItem } from '../interfaces'
 import { ACTION_TYPES, DISCOUNT_TEXT } from '../constants'
+import IconChecked from './icons/IconChecked.vue'
+import IconFree from './icons/IconFree.vue'
+import IconSelected from './icons/IconSelected.vue'
 
 const store = useStore()
 
@@ -12,11 +15,11 @@ const isChecked = computed(() => store.getters['user_selections/checkedItemIds']
 const isSelected = computed(() => store.getters['user_selections/selectedItemIds'].includes(props.id))
 
 function toggleCheck() {
-    store.dispatch(`user_selections/${ACTION_TYPES.SELECT}`, props.id)
+    store.dispatch(`user_selections/toggleItemAction`, {id: props.id, action: ACTION_TYPES.CHECK })
 }
 
 function toggleSelect() {
-    store.dispatch(`user_selections/${ACTION_TYPES.CHECK}`, props.id)
+    store.dispatch(`user_selections/toggleItemAction`, {id: props.id, action: ACTION_TYPES.SELECT })
 }
 </script>
 <template>
@@ -43,15 +46,18 @@ function toggleSelect() {
                 <button
                     type="button"
                     class="item-card-btn _item-check"
-                    :class="{ _active: isChecked }"
                     @click="toggleCheck"
-                />
+                >
+                    <IconChecked v-if="isChecked"/>
+                    <IconFree v-else />
+                </button>
                 <button
                     type="button"
                     class="item-card-btn _item-select"
-                    :class="{ _active: isSelected }"
                     @click="toggleSelect"
-                />
+                >
+                    <IconSelected :classes="isSelected ? '_active' : ''" />
+                </button>
             </div>
         </div>
     </div>

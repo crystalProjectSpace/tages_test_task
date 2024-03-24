@@ -20,7 +20,7 @@ export interface ItemMaterial {
 }
   
 export interface WareItem {
-  id: number,
+  id: string,
   name: string,
   code: string,
   price: ItemPrice,
