@@ -49,15 +49,22 @@ onBeforeUnmount(() => {
 <template>
     <div class="select-wrap" ref="selectControl">
         <span class="select-title" v-text="props.title"/>
-        <span class="select-value" v-if="!selectActive" v-text="activeLabel" @click="toggle(!selectActive)" />
-        <ul v-else clas="select-list">
-            <li
-                v-for="(option, index) in props.options"
-                :key="`${option.value}-${index}`"
-                class="select-list-option"
-                @click="selectOption(option.value)">
-                <span v-text="option.label" />
-            </li>
-        </ul>
+        <span
+            class="select-value-wrap"
+            :class="{_active: selectActive}"
+            @click="toggle(!selectActive)"
+        >
+            <span class="select-value-label" v-text="activeLabel" />
+            <span class="select-value-toggle" />
+            <ul v-if="selectActive" class="select-list">
+                <li
+                    v-for="(option, index) in props.options"
+                    :key="`${option.value}-${index}`"
+                    class="select-list-option"
+                    @click="selectOption(option.value)">
+                    <span v-text="option.label" />
+                </li>
+            </ul>
+        </span>
     </div>
 </template>

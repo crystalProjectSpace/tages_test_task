@@ -29,9 +29,14 @@ function updFilter(evt: MATERIALS) {
 </script>
 
 <template>
-  <div>
-    <main class="items-wrap">
-      <div class="items-sorters">
+  <div class="grid-page">
+    <header>
+      <h1 class="grid-items-header">
+        Комплекты стеллажных систем
+      </h1>
+    </header>
+    <main class="grid-items-wrap">
+      <div class="grid-items-sorters">
         <ItemsSorter title="Сортировать по" :options="SORT_OPTIONS" :currentValue="activeSort" @select="updSort"/>
         <ItemsSorter title="материал" :options="DISPLAY_OPTIONS" :currentValue="activeFilter" @select="updFilter"/>
       </div>

@@ -1,7 +1,5 @@
 @import './layout.css';
 @import './palette.css';
-@import './schedule-list.css';
-@import './scheduler-main.css';
-@import './buttons.css';
-@import './modals.css';
 @import './inputs.css';
+@import './main-page.css';
+@import './card.css'; 

@@ -6,8 +6,6 @@ import { MATERIALS, SORT_DIR } from '../constants'
 import ItemsCard from './ItemsCard.vue'
 const store = useStore()
 
-const materials = computed( () => store.getters['storewares/materials'])
-
 const relevantItems = computed(() => {
     const sortDir: SORT_DIR = store.getters['user_selections/activeSort']
     const activeFilter: MATERIALS = store.getters['user_selections/activeFilter']
@@ -16,14 +14,13 @@ const relevantItems = computed(() => {
         .filter((item: WareItem ) => activeFilter === MATERIALS.ALL ? true : item.material === activeFilter )
         .sort((itemPrev: WareItem, itemNext: WareItem) => {
             const delta = itemPrev.price.current_price - itemNext.price.current_price
-            return sortDir === SORT_DIR.ASC ? delta > 0 : delta < 0
+            return sortDir === SORT_DIR.ASC ? delta : -delta
         })
     
 })
 </script>
 <template>
-    <div class="items-grid">
+    <div class="grid-items">
         <ItemsCard v-for="item in relevantItems" :key="item.id" v-bind="item" />
-        <div>{{ materials }}</div>
     </div>
 </template>

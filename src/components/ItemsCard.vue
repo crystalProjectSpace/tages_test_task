@@ -27,14 +27,17 @@ function toggleSelect() {
         </figure>
         <div class="item-card-code" v-text="props.code" />
         <div class="item-card-name" v-text="props.name" />
-        <div class="item-card-pricing__wrap">
-            <div class="item-card-pricing">
+        <div class="item-card-options__wrap">
+            <div class="item-card-pricing__wrap">
                 <span
                     v-if="props.price.old_price"
                     class="item-card-pricing _obsolete"
-                    v-text="props.price.old_price"
-                />
-                <span class="item-card" v-text="props.price.current_price" />
+                >
+                    {{ Math.trunc(props.price.old_price) }}&#x20bd;
+                </span>
+                <span class="item-card-pricing">
+                    {{ Math.trunc(props.price.current_price) }}&#x20bd;
+                </span>
             </div>
             <div class="item-card-controls">
                 <button

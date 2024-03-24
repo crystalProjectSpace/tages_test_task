@@ -1,95 +1,68 @@
-.input-wrap {
-    position: relative;
-    padding: 16px 12px;
-    border-radius: 8px;
-    border: 1px solid var(--cl-txt-main);
-}
-
-.input-label {
-    position: absolute;
-    left: 24px;
-    top: -8px;
-    display: inline-block;
-    font-size: 0.875rem;
-    line-height: 1rem;
-    padding: 0px 8px;
-    background-color: var(--cl-bg-main);
-}
-
-.input-content {
-
-}
-
-.input-control {
+.select-wrap {
     display: flex;
-    align-items: center;
-    column-gap: 16px;
-}
-
-.input-control-text {
-    display: block;
-    background-color: var(--cl-txt-main);
-    color: var(--cl-bg-main);
-    border-radius: 8px;
-    flex-basis: 0;
-    flex-grow: 1;
-    padding: 4px 12px;
-    line-height: 24px;
-}
-
-.input-control__select-list {
-    background-color: var(--cl-txt-main);
-    border: 1px solid var(--cl-txt-main);
-}
-
-.input-control-option {
-    color: var(--cl-bg-main);
-    transition: color 0.3s;
-}
-
-.input-control-option:hover,
-.input-control-option._selected {
-    background-color: var(--cl-bg-main);
-    color: var(--cl-txt-main);
-}
-
-.input-toggle {
-    border-radius: 999px;
-    background-color: var(--cl-txt-main);
-    height: 16px;
-    width: 64px;
-    border: 1px solid var(--cl-txt-main);
-}
-
-.input-toggle-thumb {
-    position: relative;
-    display: inline-block;
-    height: 14px;
-    width: 32px;
-    margin-bottom: 1px;
-    border-radius: 999px;
-    line-height: 1rem;
-    background-color: var(--cl-bg-main);
-    transform-origin: 0% 50%;
-    transition: transform 0.3s;
+    flex-direction: column;
+    row-gap: 6px;
     cursor: pointer;
+    width: 288px;
+    max-width: 288px;
 }
 
-.input-toggle-thumb._active {
-    transform: translateX(30px);
+.select-title {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--cl-txt-label);
+    padding: 0 16px;
 }
 
-.input-toggle-thumb::after {
-    position: absolute;
-    top: -1px;
-    left: 4px;
+.select-value-wrap {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cl-bg-input);
+    padding: 8px 16px;
+}
+
+.select-value-label {
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.003em;
+}
+
+.select-value-toggle {
     display: inline-block;
-    content: 'Нет';
-    color: var(--cl-txt-main);
-    font-size: 0.8rem;
+    width: var(--btn-size);
+    height: var(--btn-size);
+    border-right: 2px solid var(--cl-txt-main);
+    border-bottom: 2px solid var(--cl-txt-main);
+    transition: transform 0.3s;
+    transform-origin: 50% 50%;
+    transform: rotate(45deg);
 }
 
+.select-value-wrap._active .select-value-toggle {
+    transform: rotate(-45deg);
+}
 
-.input-toggle-thumb._active::after {
-    content: 'Да';
+.select-list {
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: calc(100% + 4px);
+    width: 100%;
+    border: 1px solid var(--cl-border-main);
+}
+
+.select-list-option {
+    background-color: var(--cl-bg-main);
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.003em;
+    transition: background-color 0.3s;
+}
+
+.select-list-option:hover,
+.select-list-option._active {
+    background-color: var(--cl-bg-input);
 }
