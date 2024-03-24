@@ -7,11 +7,11 @@
 
 .item-card-notice  {
     position: absolute;
-    top: 0;
+    top: 8px;
     left: 0;
     display: inline-block;
     background-color: var(--cl-bg-notice);
-    color: var(--ct-txt-notice);
+    color: var(--cl-txt-notice);
     font-size: 14px;
     line-height: 18px;
     padding: 3px 16px;
@@ -26,6 +26,7 @@
     width: var(--card-img-size);
     height: var(--card-img-size);
     object-fit: contain;
+    margin: auto;
 }
 
 .item-card-code  {
