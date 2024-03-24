@@ -89,7 +89,7 @@
     color: #27AE60;
 }
 
-@media screen and (max-width: 648px) {
+@media screen and (max-width: 768px) {
     .item-card {
         width: 100%;
     }    

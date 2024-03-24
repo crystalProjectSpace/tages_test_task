@@ -4,6 +4,10 @@
     padding: 0 16px;
 }
 
+.grid-page-header {
+    background-color: var(--cl-bg-main);
+}
+
 .grid-items-header {
     margin-bottom: 32px;
 }
@@ -32,10 +36,28 @@
     row-gap: 48px;
 }
 
-@media screen and (max-width: 648px) {
+@media screen and (max-width: 768px) {
     .grid-page {
         width: 100%;
         padding: 0 16px;
+    }
+
+    .grid-items-wrap {
+        padding-top: 280px;
+    }
+
+    .grid-page-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .grid-items-header h1 {
+        font-size: 24px;
+        line-height: 36px;
     }
 
     .grid-items-sorters {
@@ -47,5 +69,11 @@
         flex-direction: column;
         row-gap: 24px;
         column-gap: 0;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .grid-items-wrap {
+        padding-top: 328px;
     }
 }

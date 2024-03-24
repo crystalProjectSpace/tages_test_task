@@ -30,16 +30,16 @@ function updFilter(evt: MATERIALS) {
 
 <template>
   <div class="grid-page">
-    <header>
+    <header class="grid-page-header">
       <h1 class="grid-items-header">
         Комплекты стеллажных систем
       </h1>
-    </header>
-    <main class="grid-items-wrap">
       <div class="grid-items-sorters">
         <ItemsSorter title="Сортировать по" :options="SORT_OPTIONS" :currentValue="activeSort" @select="updSort"/>
-        <ItemsSorter title="материал" :options="DISPLAY_OPTIONS" :currentValue="activeFilter" @select="updFilter"/>
+        <ItemsSorter title="Материал" :options="DISPLAY_OPTIONS" :currentValue="activeFilter" @select="updFilter"/>
       </div>
+    </header>
+    <main class="grid-items-wrap">
       <span v-if="loading" class="loader" />  
       <ItemsGrid v-else />
     </main>

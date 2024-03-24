@@ -27,6 +27,8 @@
     font-size: 14px;
     line-height: 21px;
     letter-spacing: 0.003em;
+    flex-basis: 0;
+    flex-grow: 1;
 }
 
 .select-value-toggle {

@@ -1,7 +1,7 @@
 export enum MATERIALS {
-  ALL = 0,
   WOOD = 1,
   METAL = 2,
+  ALL = 3,
 }
   
 export enum ACTION_TYPES {

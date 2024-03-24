@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
 interface SelectOption {
     label: string,
@@ -35,7 +35,7 @@ function deselectOnOutside(evt: MouseEvent) {
 
 function selectOption(val: number | string) {
     emits('select', val)
-    toggle(false)
+    nextTick(() => toggle(false))
 }
 
 onMounted(() => {
@@ -52,9 +52,8 @@ onBeforeUnmount(() => {
         <span
             class="select-value-wrap"
             :class="{_active: selectActive}"
-            @click="toggle(!selectActive)"
         >
-            <span class="select-value-label" v-text="activeLabel" />
+            <span class="select-value-label" v-text="activeLabel" @click="toggle(!selectActive)"/>
             <span class="select-value-toggle" />
             <ul v-if="selectActive" class="select-list">
                 <li

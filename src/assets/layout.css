@@ -1,8 +1,7 @@
 :root {
   font-family: 'SF Pro Display', Verdana;
-  --btn-size: 16px;
+  --btn-size: 12px;
   --select-width: 288px;
-  --mobile-max: 648px;
   --card-size: 336px;
   --card-img-size: 238px;
 }
