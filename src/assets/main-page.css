@@ -34,6 +34,7 @@
     flex-wrap:wrap;
     column-gap: 48px;
     row-gap: 48px;
+    padding-bottom: 64px;
 }
 
 @media screen and (max-width: 768px) {
@@ -69,6 +70,7 @@
         flex-direction: column;
         row-gap: 24px;
         column-gap: 0;
+        padding-bottom: 32px;
     }
 }
 

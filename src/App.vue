@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeMount } from 'vue';
+import { computed, onBeforeMount, watch } from 'vue';
 import { useStore } from 'vuex'
 import { DISPLAY_OPTIONS, MATERIALS, SORT_DIR, SORT_OPTIONS } from './constants';
 import ItemsGrid from './components/ItemsGrid.vue'
@@ -10,6 +10,7 @@ const store = useStore()
 const loading = computed(() => store.getters['storewares/loading'])
 const activeFilter = computed(() => store.getters['user_selections/activeFilter'])
 const activeSort = computed(() => store.getters['user_selections/activeSort'])
+const serializedUserData = computed(() => store.getters['user_selections/serializedUserData'])
 
 onBeforeMount(async ()=> {
   store.dispatch('user_selections/restoreFromLS')
@@ -26,6 +27,10 @@ function updSort(evt: SORT_DIR) {
 function updFilter(evt: MATERIALS) {
   store.dispatch('user_selections/updateFilters', { filter: evt })
 }
+
+watch(serializedUserData, (newVal, oldVal) => {
+  if(newVal !== oldVal) store.dispatch('user_selections/selectionToLS')
+})
 </script>
 
 <template>

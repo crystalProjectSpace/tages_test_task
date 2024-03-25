@@ -46,9 +46,10 @@ const actions = <ActionTree<State, unknown>>{
   clearChecked({ commit }) {
     commit(ACTION_TYPES.CHECK, [])
   },
-  selectionToLS({ state }) {
-    const userData = JSON.stringify(state)
-    window.localStorage.setItem(USER_SELECTION_KEY, userData)
+  selectionToLS({ getters }) {
+    window.localStorage.removeItem(USER_SELECTION_KEY)
+    const { serializedUserData } = getters
+    window.localStorage.setItem(USER_SELECTION_KEY, serializedUserData)
   },
   restoreFromLS({ commit, dispatch }) {
     const serializedSelection = window.localStorage.getItem(USER_SELECTION_KEY)
@@ -82,6 +83,7 @@ const getters = <GetterTree<State, unknown>>{
   selectedItemIds: state => state.selectedItemIds,
   activeSort: state => state.activeSort,
   activeFilter: state => state.activeFilter,
+  serializedUserData: state => JSON.stringify(state),
 }
 
 export const user_selections = {
